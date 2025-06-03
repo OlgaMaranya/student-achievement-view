@@ -1,5 +1,5 @@
 
-import { Bell, User, ChevronDown, HelpCircle, LogOut } from "lucide-react";
+import { Bell, User, ChevronDown, HelpCircle, LogOut, Settings } from "lucide-react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import {
   DropdownMenu,
