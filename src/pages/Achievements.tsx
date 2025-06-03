@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Filter, Download, RefreshCw } from "lucide-react";
+import { Filter, Download, RefreshCw, Plus } from "lucide-react";
 import {
   Select,
   SelectContent,
