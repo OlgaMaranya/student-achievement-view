@@ -152,7 +152,7 @@ export type Database = {
           timestamp: string
           type_id: number
           updated_at: string
-          user_id: number
+          user_id: string | null
         }
         Insert: {
           feedback?: string | null
@@ -162,7 +162,7 @@ export type Database = {
           timestamp: string
           type_id: number
           updated_at?: string
-          user_id: number
+          user_id?: string | null
         }
         Update: {
           feedback?: string | null
@@ -172,7 +172,7 @@ export type Database = {
           timestamp?: string
           type_id?: number
           updated_at?: string
-          user_id?: number
+          user_id?: string | null
         }
         Relationships: [
           {
@@ -186,7 +186,7 @@ export type Database = {
             foreignKeyName: "assessment_data_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
-            referencedRelation: "users"
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -266,44 +266,44 @@ export type Database = {
       curatoractions: {
         Row: {
           action_type: string
-          curator_id: number
+          curator_id: string | null
           id: number
           inserted_at: string
           timestamp: string
           updated_at: string
-          user_id: number
+          user_id: string | null
         }
         Insert: {
           action_type: string
-          curator_id: number
+          curator_id?: string | null
           id?: number
           inserted_at?: string
           timestamp: string
           updated_at?: string
-          user_id: number
+          user_id?: string | null
         }
         Update: {
           action_type?: string
-          curator_id?: number
+          curator_id?: string | null
           id?: number
           inserted_at?: string
           timestamp?: string
           updated_at?: string
-          user_id?: number
+          user_id?: string | null
         }
         Relationships: [
           {
             foreignKeyName: "curator_actions_curator_id_fkey"
             columns: ["curator_id"]
             isOneToOne: false
-            referencedRelation: "users"
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
           {
             foreignKeyName: "curator_actions_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
-            referencedRelation: "users"
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -317,7 +317,7 @@ export type Database = {
           timestamp: string
           tool_id: number
           updated_at: string
-          user_id: number
+          user_id: string | null
         }
         Insert: {
           competency_id: number
@@ -327,7 +327,7 @@ export type Database = {
           timestamp: string
           tool_id: number
           updated_at?: string
-          user_id: number
+          user_id?: string | null
         }
         Update: {
           competency_id?: number
@@ -337,7 +337,7 @@ export type Database = {
           timestamp?: string
           tool_id?: number
           updated_at?: string
-          user_id?: number
+          user_id?: string | null
         }
         Relationships: [
           {
@@ -358,7 +358,7 @@ export type Database = {
             foreignKeyName: "diagnostic_data_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
-            referencedRelation: "users"
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -481,7 +481,7 @@ export type Database = {
           task: string | null
           timestamp: string
           updated_at: string
-          user_id: number
+          user_id: string | null
         }
         Insert: {
           activity_id: number
@@ -493,7 +493,7 @@ export type Database = {
           task?: string | null
           timestamp: string
           updated_at?: string
-          user_id: number
+          user_id?: string | null
         }
         Update: {
           activity_id?: number
@@ -505,7 +505,7 @@ export type Database = {
           task?: string | null
           timestamp?: string
           updated_at?: string
-          user_id?: number
+          user_id?: string | null
         }
         Relationships: [
           {
@@ -519,7 +519,7 @@ export type Database = {
             foreignKeyName: "experience_data_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
-            referencedRelation: "users"
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -533,7 +533,7 @@ export type Database = {
           source: string
           timestamp: string
           updated_at: string
-          user_id: number
+          user_id: string | null
         }
         Insert: {
           category_id: number
@@ -543,7 +543,7 @@ export type Database = {
           source: string
           timestamp: string
           updated_at?: string
-          user_id: number
+          user_id?: string | null
         }
         Update: {
           category_id?: number
@@ -553,7 +553,7 @@ export type Database = {
           source?: string
           timestamp?: string
           updated_at?: string
-          user_id?: number
+          user_id?: string | null
         }
         Relationships: [
           {
@@ -567,7 +567,7 @@ export type Database = {
             foreignKeyName: "intentions_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
-            referencedRelation: "users"
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -580,7 +580,7 @@ export type Database = {
           inserted_at: string
           timestamp: string
           updated_at: string
-          user_id: number
+          user_id: string | null
         }
         Insert: {
           action_type: string
@@ -589,7 +589,7 @@ export type Database = {
           inserted_at?: string
           timestamp: string
           updated_at?: string
-          user_id: number
+          user_id?: string | null
         }
         Update: {
           action_type?: string
@@ -598,7 +598,7 @@ export type Database = {
           inserted_at?: string
           timestamp?: string
           updated_at?: string
-          user_id?: number
+          user_id?: string | null
         }
         Relationships: [
           {
@@ -612,7 +612,7 @@ export type Database = {
             foreignKeyName: "interactions_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
-            referencedRelation: "users"
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -629,7 +629,7 @@ export type Database = {
           sports_rating: number
           total_points: number
           updated_at: string
-          user_id: number
+          user_id: string | null
           valid_from: string
           valid_to: string | null
         }
@@ -644,7 +644,7 @@ export type Database = {
           sports_rating: number
           total_points: number
           updated_at?: string
-          user_id: number
+          user_id?: string | null
           valid_from: string
           valid_to?: string | null
         }
@@ -659,7 +659,7 @@ export type Database = {
           sports_rating?: number
           total_points?: number
           updated_at?: string
-          user_id?: number
+          user_id?: string | null
           valid_from?: string
           valid_to?: string | null
         }
@@ -668,7 +668,7 @@ export type Database = {
             foreignKeyName: "kpi_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
-            referencedRelation: "users"
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -736,7 +736,7 @@ export type Database = {
           role: string
           timestamp: string
           updated_at: string
-          user_id: number
+          user_id: string | null
         }
         Insert: {
           activity_id: number
@@ -747,7 +747,7 @@ export type Database = {
           role: string
           timestamp: string
           updated_at?: string
-          user_id: number
+          user_id?: string | null
         }
         Update: {
           activity_id?: number
@@ -758,7 +758,7 @@ export type Database = {
           role?: string
           timestamp?: string
           updated_at?: string
-          user_id?: number
+          user_id?: string | null
         }
         Relationships: [
           {
@@ -779,7 +779,7 @@ export type Database = {
             foreignKeyName: "participation_data_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
-            referencedRelation: "users"
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -854,7 +854,7 @@ export type Database = {
           inserted_at: string
           timestamp: string
           updated_at: string
-          user_id: number
+          user_id: string | null
         }
         Insert: {
           action_type: string
@@ -863,7 +863,7 @@ export type Database = {
           inserted_at?: string
           timestamp: string
           updated_at?: string
-          user_id: number
+          user_id?: string | null
         }
         Update: {
           action_type?: string
@@ -872,7 +872,7 @@ export type Database = {
           inserted_at?: string
           timestamp?: string
           updated_at?: string
-          user_id?: number
+          user_id?: string | null
         }
         Relationships: [
           {
@@ -886,7 +886,45 @@ export type Database = {
             foreignKeyName: "process_data_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
-            referencedRelation: "users"
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          created_at: string | null
+          email: string | null
+          first_name: string | null
+          id: string
+          last_name: string | null
+          role_id: number | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          email?: string | null
+          first_name?: string | null
+          id: string
+          last_name?: string | null
+          role_id?: number | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          email?: string | null
+          first_name?: string | null
+          id?: string
+          last_name?: string | null
+          role_id?: number | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "profiles_role_id_fkey"
+            columns: ["role_id"]
+            isOneToOne: false
+            referencedRelation: "userroles"
             referencedColumns: ["id"]
           },
         ]
@@ -964,7 +1002,7 @@ export type Database = {
           measurement_value: number
           timestamp: string
           updated_at: string
-          user_id: number
+          user_id: string | null
         }
         Insert: {
           category_id: number
@@ -973,7 +1011,7 @@ export type Database = {
           measurement_value: number
           timestamp: string
           updated_at?: string
-          user_id: number
+          user_id?: string | null
         }
         Update: {
           category_id?: number
@@ -982,7 +1020,7 @@ export type Database = {
           measurement_value?: number
           timestamp?: string
           updated_at?: string
-          user_id?: number
+          user_id?: string | null
         }
         Relationships: [
           {
@@ -996,7 +1034,7 @@ export type Database = {
             foreignKeyName: "state_data_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
-            referencedRelation: "users"
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -1030,7 +1068,7 @@ export type Database = {
           id: number
           inserted_at: string
           updated_at: string
-          user_id: number
+          user_id: string | null
         }
         Insert: {
           achievement_id: number
@@ -1039,7 +1077,7 @@ export type Database = {
           id?: number
           inserted_at?: string
           updated_at?: string
-          user_id: number
+          user_id?: string | null
         }
         Update: {
           achievement_id?: number
@@ -1048,7 +1086,7 @@ export type Database = {
           id?: number
           inserted_at?: string
           updated_at?: string
-          user_id?: number
+          user_id?: string | null
         }
         Relationships: [
           {
@@ -1062,7 +1100,7 @@ export type Database = {
             foreignKeyName: "user_achievements_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
-            referencedRelation: "users"
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -1077,7 +1115,7 @@ export type Database = {
           participation_id: number | null
           process_id: number | null
           updated_at: string
-          user_id: number
+          user_id: string | null
         }
         Insert: {
           assessment_id?: number | null
@@ -1088,7 +1126,7 @@ export type Database = {
           participation_id?: number | null
           process_id?: number | null
           updated_at?: string
-          user_id: number
+          user_id?: string | null
         }
         Update: {
           assessment_id?: number | null
@@ -1099,7 +1137,7 @@ export type Database = {
           participation_id?: number | null
           process_id?: number | null
           updated_at?: string
-          user_id?: number
+          user_id?: string | null
         }
         Relationships: [
           {
@@ -1141,7 +1179,7 @@ export type Database = {
             foreignKeyName: "user_data_relations_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
-            referencedRelation: "users"
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -1166,50 +1204,6 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
-      }
-      users: {
-        Row: {
-          email: string
-          first_name: string
-          id: number
-          inserted_at: string
-          last_name: string
-          password_hash: string
-          registration_date: string
-          role_id: number
-          updated_at: string
-        }
-        Insert: {
-          email: string
-          first_name: string
-          id?: number
-          inserted_at?: string
-          last_name: string
-          password_hash: string
-          registration_date: string
-          role_id: number
-          updated_at?: string
-        }
-        Update: {
-          email?: string
-          first_name?: string
-          id?: number
-          inserted_at?: string
-          last_name?: string
-          password_hash?: string
-          registration_date?: string
-          role_id?: number
-          updated_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "users_role_id_fkey"
-            columns: ["role_id"]
-            isOneToOne: false
-            referencedRelation: "userroles"
-            referencedColumns: ["id"]
-          },
-        ]
       }
     }
     Views: {
